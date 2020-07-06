@@ -90,7 +90,11 @@ public class OnlineShopping extends TestBase {
 			      register.setAdditionalText(ExcelUtils.getCellData(i, 13));
 			      register.setHomePhone(ExcelUtils.getCellData(i, 14)); 
 			      register.setMobilePhone(ExcelUtils.getCellData(i, 15));
+			      register.addressClick(ExcelUtils.getCellData(i, 16));
 			      register.ClickRegister();
+			      register.clicksignOut();
+			      register.writeEmail(ExcelUtils.getCellData(i, 0));
+			      register.writePassword(ExcelUtils.getCellData(i, 3));
 			      homepage.ClickOnWomenBtn();
 			      driver.manage().timeouts().implicitlyWait(150,TimeUnit.SECONDS) ;
 			      Assert.assertTrue(page.validateAddToCart(driver));

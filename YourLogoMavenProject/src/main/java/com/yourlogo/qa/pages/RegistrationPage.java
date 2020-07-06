@@ -108,11 +108,37 @@ public class RegistrationPage extends TestBase
 	
 	@FindBy (xpath = "//*[@id=\"SubmitCreate\"]/span")
 	WebElement ClickCreatBtn;
+	
+	@FindBy(id = "alias")
+	WebElement Address1223;
+	
+	@FindBy(xpath = "//*[@id=\"header\"]/div[2]/div/div/nav/div[2]/a")
+	WebElement signout;
+	
+	@FindBy(id = "email")
+	WebElement writeEmail;
+	@FindBy (id = "passwd")
+	WebElement password2;
 	public RegistrationPage(WebDriver driver)
 	{
 		PageFactory.initElements(driver, this);
 	}
-	
+	public void clicksignOut() 
+	{
+		signout.click();
+	}	
+	public void writeEmail(String stremail1)
+	{
+		writeEmail.sendKeys(stremail1);
+	}
+	public void writePassword(String strPasswrd )
+	{
+		password2.sendKeys(strPasswrd);
+	}
+	public void addressClick(String strAdress)
+	{
+		Address1223.sendKeys(strAdress);
+	}
 	public void ClickSignIn()
 	{
 		SigninButton.click();
